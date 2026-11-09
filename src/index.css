@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f6f1e7; --card: #fffdf8; --ink: #23322c; --muted: #6b7a72;
+  --accent: #1f6f55; --accent2: #b8903a; --line: #e5dcc8;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101a16; --card: #17241e; --ink: #eae6d8; --muted: #9bb0a5;
+    --accent: #4fb894; --accent2: #d9b25c; --line: #2a3b33;
+    color-scheme: dark;
+  }
+}
+
+html, body { background: var(--bg); color: var(--ink); font-family: "Cairo", Tahoma, sans-serif; margin: 0; }
+
+@layer components {
+  .quran { font-family: "Amiri", "Traditional Arabic", serif; line-height: 2.5; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+  .btn { border: 1px solid var(--line); border-radius: 999px; padding: 0.4rem 1rem; color: var(--muted); background: transparent; cursor: pointer; }
+  .btn.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 1.9rem; height: 1.9rem; border: 1px solid var(--accent2); color: var(--accent2); border-radius: 50%; font-size: 0.75rem; margin: 0 0.3rem; font-family: "Cairo", sans-serif; line-height: 1; }
+  .search { width: 100%; padding: 0.7rem 1rem; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; }
+}
